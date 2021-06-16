@@ -2,7 +2,7 @@
 ============Quantumultx===============
 [task_local]
 #店铺签到
-0 0 * * * https://raw.githubusercontent.com/ljqailym/JD/main/dpqd6.js, tag=店铺签到, enabled=true
+42 0.23 * * * https://raw.githubusercontent.com/ljqailym/JD/main/dpqd6.js, tag=店铺签到, enabled=true
 ===========Loon============
 [Script]
 cron "0 0 * * *" script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd6.js,tag=店铺签到
