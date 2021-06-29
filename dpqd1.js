@@ -2,14 +2,14 @@
 ============Quantumultx===============
 [task_local]
 #店铺签到
-0 0 * * * https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js, tag=店铺签到, enabled=true
+57 59 23 * * * https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js, tag=店铺签到, enabled=true
 ===========Loon============
 [Script]
-cron "0 0 * * *" script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js,tag=店铺签到
+cron "57 59 23 * * *" script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js,tag=店铺签到
 ============Surge=============
-店铺签到 = type=cron,cronexp="0 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd2.js
+店铺签到 = type=cron,cronexp="57 59 23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd2.js
 ===========小火箭========
-店铺签到 = type=cron,script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js, cronexpr="0 0 * * *", timeout=3600, enable=true
+店铺签到 = type=cron,script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js, cronexpr="57 59 23 * * *", timeout=3600, enable=true
 */
 
 const $ = new Env('当天店铺签到');
