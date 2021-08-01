@@ -2,7 +2,7 @@
 
 [task_local]
 #星系牧场
-1 8 * * * https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_wxFans.js, tag=粉丝互动, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+1 0 * * * https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_wxFans.js, tag=粉丝互动, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 */
 const $ = new Env('伊利粉丝互动');
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -26,7 +26,7 @@ if ($.isNode()) {
 
 const JD_API_HOST = `https://api.m.jd.com/client.action`;
 message = ""
-$.shareuuid = "8cec00a4917e4af6ae49f8f4f9e7b58d"
+$.shareuuid = ""
 $.actid = "162c43699ba945e8adb83b2bd5fe0142"
 !(async () => {
         if (!cookiesArr[0]) {
