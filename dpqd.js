@@ -2,17 +2,17 @@
 ============Quantumultx===============
 [task_local]
 #店铺签到
-0 0 * * * https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js, tag=店铺签到, enabled=true
+45 0,23 * * * https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js, tag=店铺签到, enabled=true
 ===========Loon============
 [Script]
-cron "0 0 * * *" script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js,tag=店铺签到
+cron "45 0,23 * * *" script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js,tag=店铺签到
 ============Surge=============
 店铺签到 = type=cron,cronexp="0 0 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd2.js
 ===========小火箭========
 店铺签到 = type=cron,script-path=https://raw.githubusercontent.com/ljqailym/JD/main/dpqd1.js, cronexpr="0 0 * * *", timeout=3600, enable=true
 */
 
-const $ = new Env('店铺签到1');
+const $ = new Env('店铺签到');
 
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -26,14 +26,18 @@ let vender=''
 let num=0
 let shopname=''
 const token=[
- '923B4A86ABF314784BC90CAD46411C45',//3天100豆100份6.17
- '893EA51919E06517CFAF747E8B788A5B',//3天100豆100份6.17
- '496017C7B3B26B95067216992EA08823',//7天100豆6.17
- 'B074A1D31FBE70238ABA52F4BF59036A',//3天100豆300份6.17
- 'BCB324D18465055A265A4AFC205221D2',//60豆6.17/100豆6.20
- '59399EDF11FD4AE61085376366AA4D07',//3天50豆100份6.17
- '7B089B880153397E368BC08435501F73',//30豆6.17/60豆6.19/100豆6.21
- '8B0EFD6D0846100298F550CB1BCE57BE',//每天10豆/7天50豆6.20
+ '1006B5AFC88A3FEE35959BDBAD843EA9',//4天5元红包100份8.9
+ 'D0CDF80011942AE7423EBB4374248C3E',//3天100豆8.9
+ 'A7549BABE68A56F6D2477F2CFC231D2D',//20豆8.9
+ 'BAFE21B93BFA614C21BD8EF6931CBF61',//5天4元红包100份8.10
+ '5555D4C7EC351D7FE343C3487DE4BCCC',//7天100豆50份8.11
+ '71CCEF1EF48F1CA3DDE203449AE7E26F',//7天100豆100份8.11
+ '7DE1E4B12326576BF7C5D347CC909451',//7天100豆30000份8.12
+ '5C6E9741DD83A3A06E33B5C991FE285D',//68豆8.12/88豆8.27/5000份
+ '99628C88108F58956B08EEC980386D29',//7天5元红包200份8.13
+ 'CE88E5242954E4B97D0B8B387D8B5607',//50豆8.13/200份
+ '813715D5CEE4414B6D4F0FF0407C9D96',//7天50豆8.13
+ 'D42C0923FD93C5E69AB2691CA66CAA14',//10天100豆500份8.16
 ]
 //IOS等用户直接用NobyDa的jd cookie
 
