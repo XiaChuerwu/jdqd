@@ -1,6 +1,6 @@
 8/*
 只能用一天。需每天寻找直播抓包
-1 8-23 * * * lxk0301_live_redrain.js
+0 0-23 * * * https://raw.githubusercontent.com/ljqailym/JD/main/redman_rain_hyzb.js, tag=行业直播日红包雨, enabled=true
 */
 const $ = new Env('家电红包雨');
 let allMessage = '';
