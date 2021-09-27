@@ -1,7 +1,16 @@
-8/*
-只能用一天。需每天寻找直播抓包
-0 0-23 * * * https://raw.githubusercontent.com/ljqailym/JD/main/redman_rain_hyzb.js, tag=行业直播日红包雨, enabled=true
-*/
+/*
+============Quantumultx===============
+[task_local]
+#家电红包雨
+0 0-23 * * * https://raw.githubusercontent.com/ljqailym/JD/main/redman_rain_hyzb.js, tag=家电红包雨, enabled=true
+===========Loon============
+[Script]
+cron "0 0-23 * * *" script-path=https://raw.githubusercontent.com/ljqailym/JD/main/redman_rain_hy.js,tag=家电红包雨
+============Surge=============
+家电红包雨 = type=cron,cronexp="0 0-23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/ljqailym/JD/main/redman_rain_hy.js
+===========小火箭========
+家电红包雨 = type=cron,script-path=https://raw.githubusercontent.com/ljqailym/JD/main/redman_rain_hy.js, cronexpr="0 0-23 * * *", timeout=3600, enable=true
+
 const $ = new Env('家电红包雨');
 let allMessage = '';
 let bodyList = {
