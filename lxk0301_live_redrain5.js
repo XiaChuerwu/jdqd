@@ -10,7 +10,7 @@ cron "0 0-23 * * *" script-path=https://raw.githubusercontent.com/ljqailym/JD/ma
 家电红包雨 = type=cron,cronexp="0 0-23 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/ljqailym/JD/main/redman_rain_hy.js
 ===========小火箭========
 家电红包雨 = type=cron,script-path=https://raw.githubusercontent.com/ljqailym/JD/main/redman_rain_hy.js, cronexpr="0 0-23 * * *", timeout=3600, enable=true
-
+*/
 const $ = new Env('家电红包雨');
 let allMessage = '';
 let bodyList = {
