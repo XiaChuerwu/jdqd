@@ -6,24 +6,28 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
-"c90d623863ed4982a73481c512286cdf",//1大华存储京自，未更新
-"a04de0f87662476b9574461801342437",//2哲品家居，未更新
-"c564ce7bb884ea3b477ddd2f652872c",//3第六感，7天套
-"9c1a645eff204457ac1ad9367f0d1528",//4福斯，未更新
-"a3dc924247814cfba0ddde7f947cb468",//5小米有品，7天50豆
-"9175a07891ea4cbc91c28b64bfabccf5",//6欧泊莱，7天62豆
-"e2b6934c1eee4d278671a930c41e2bd3",//7碧欧泉男士，7天30豆
-"931d2ad747a741fdabc28ef47ce22b43",//8贝锐，未更新
-"3d251d8d830e4e0797b547ac2285c292",//9碧欧泉，7天30豆
-"303672d3009499bb838536b9d3e834e",//10薄荷健康，4天10豆
-"38fadd60fd8a471fba105928eb12ee4b",//11星巴克家享咖啡，7天500
-"5f8eab4bb9de4595800a70136bc514ee",//12科沃斯，7天111豆
-"64f21bb73a8d4c74887d70ddcdcba59d",//13黄飞红，3天300豆
-"041d19d1153440399ed35ca4dfcb683f",//14锅圈，7天100豆
-"3e53512342c3437c8c3f4880147d2f59",//15欧泊莱京自，7天豆
-"4d9dbddfe10c486da90bdeea6cc9568e",//16轩邑，7天100豆
-"279e6b50e17d485f9453969242ad01eb",//17梅林京自，7天68豆
-"8e82e2d9dac3486585fdc5db5f089bce",//18雅塑京自，7天20豆  
+//0小米有品，7天50豆
+"a3dc924247814cfba0ddde7f947cb468",
+//1碧欧泉男士，7天30豆
+"e2b6934c1eee4d278671a930c41e2bd3",
+//2碧欧泉，7天30豆
+"3d251d8d830e4e0797b547ac2285c292",
+//3星巴克家享咖啡，7天500
+"38fadd60fd8a471fba105928eb12ee4b",
+//4科沃斯，7天111豆
+"5f8eab4bb9de4595800a70136bc514ee",
+//5黄飞红，3天300豆
+"64f21bb73a8d4c74887d70ddcdcba59d",
+//6锅圈，7天100豆
+"041d19d1153440399ed35ca4dfcb683f",
+//7欧泊莱京自，7天豆
+"3e53512342c3437c8c3f4880147d2f59",
+//8轩邑，7天100豆
+"4d9dbddfe10c486da90bdeea6cc9568e",
+//9梅林京自，7天68豆
+"279e6b50e17d485f9453969242ad01eb",
+//10雅塑京自，7天20豆
+"8e82e2d9dac3486585fdc5db5f089bce"
 ]
 let lz_cookie = {}
 
@@ -74,8 +78,9 @@ if ($.isNode()) {
             $.activityUrl = `https://lzkj-isv.isvjcloud.com/sign/sevenDay/signActivity?activityId=${$.activityId}&shareuserid4minipg=&shopid=${$.venderId}&lng=00.000000&lat=00.000000&sid=&un_area=`
             for(let a in activityIdList){
                 $.activityId = activityIdList[a];
+                console.log('\n开始第'+ a +'个活动');
                 await pandaSevenDay();
-                await $.wait(1000);
+                await $.wait(2500);
             }
             if ($.bean > 0) {
                 message += `\n【京东账号${$.index}】${$.nickName || $.UserName} \n       └ 获得 ${$.bean} 京豆。`
@@ -233,7 +238,6 @@ function getMyPing() {
                     if (data) {
                         data = JSON.parse(data)
                         if (data.result) {
-                            $.log(`你好：${data.data.nickname}`)
                             $.pin = data.data.nickname;
                             $.secretPin = data.data.secretPin;
                         } else {
