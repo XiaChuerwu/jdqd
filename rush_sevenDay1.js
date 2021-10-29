@@ -7,9 +7,9 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
 //11奈力士旗舰店，11.4五元e卡
-"496cc1937c5e48c6a130a895e5c218a4"
+"496cc1937c5e48c6a130a895e5c218a4",
 //12蓓甜诗京自，7天37豆
-"19b782792e17499e847d2d1c8c37fdf6"
+"19b782792e17499e847d2d1c8c37fdf6",
 //13宠幸京自，7天20豆
 "a82f2545a4e549768d700107d70b4f19"    
 ]
