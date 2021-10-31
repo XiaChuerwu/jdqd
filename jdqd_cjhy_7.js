@@ -1,7 +1,7 @@
 /*
-0 0 * * * rush_sevenDay.js
+30 0 0,3,22 * * * jdqd_cjhy_7.js
 */
-const $ = new Env('超级无线店铺签到');
+const $ = new Env('7天cjhy店铺签到');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
