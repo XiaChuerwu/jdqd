@@ -6,12 +6,8 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
-//0希捷11.6-1111豆
-"3ee89d0a230e434983c46dcb2fd780bd",
-//1蓓甜诗京自，7天37豆
-"19b782792e17499e847d2d1c8c37fdf6",
-//2宠幸京自，7天20豆
-"a82f2545a4e549768d700107d70b4f19"
+//威戈京自，11.4-100，11.5-150，11.6-200
+"cf07d2b1201946209aca819f62b5fe0b",
 ]
 let lz_cookie = {}
 
@@ -59,7 +55,7 @@ if ($.isNode()) {
             $.bean = 0;
             $.ADID = getUUID('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 1);
             $.UUID = getUUID('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
-            $.activityUrl = `https://cjhy-isv.isvjcloud.com/sign/sevenDay/signActivity?activityId=${$.activityId}&shareuserid4minipg=&shopid=${$.venderId}&lng=00.000000&lat=00.000000&sid=&un_area=`
+            $.activityUrl = `https://lzkj-isv.isvjcloud.com/sign/sevenDay/signActivity?activityId=${$.activityId}&shareuserid4minipg=&shopid=${$.venderId}&lng=00.000000&lat=00.000000&sid=&un_area=`
             for(let a in activityIdList){
                 $.activityId = activityIdList[a];
                 console.log('\n开始第'+ a +'个活动');
@@ -144,7 +140,7 @@ function task(function_id, body, isCommon = 0) {
                                 case 'sign/sevenDay/wx/signUp':
                                     if(data){
                                         if (data.isOk) {
-                                            console.log("签到成功");
+                                            console.log('签到成功');
                                         } else {
                                             console.log(data.msg);
                                         }
@@ -167,15 +163,15 @@ function task(function_id, body, isCommon = 0) {
 }
 function taskUrl(function_id, body, isCommon) {
     return {
-        url: isCommon ? `https://cjhy-isv.isvjcloud.com/${function_id}` : `https://cjhy-isv.isvjcloud.com/sign/wx/${function_id}`,
+        url: isCommon ? `https://lzkj-isv.isvjcloud.com/${function_id}` : `https://lzkj-isv.isvjcloud.com/sign/wx/${function_id}`,
         headers: {
-            Host: 'cjhy-isv.isvjcloud.com',
+            Host: 'lzkj-isv.isvjcloud.com',
             Accept: 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
             'Accept-Language': 'zh-cn',
             'Accept-Encoding': 'gzip, deflate, br',
             'Content-Type': 'application/x-www-form-urlencoded',
-            Origin: 'https://cjhy-isv.isvjcloud.comm',
+            Origin: 'https://lzkj-isv.isvjcloud.comm',
             'User-Agent': `jdapp;iPhone;9.5.4;13.6;${$.UUID};network/wifi;ADID/${$.ADID};model/iPhone10,3;addressid/0;appBuild/167668;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`,
             Connection: 'keep-alive',
             Referer: $.activityUrl,
@@ -188,15 +184,15 @@ function taskUrl(function_id, body, isCommon) {
 
 function getMyPing() {
     let opt = {
-        url: `https://cjhy-isv.isvjcloud.com/customer/getMyPing`,
+        url: `https://lzkj-isv.isvjcloud.com/customer/getMyPing`,
         headers: {
-            Host: 'cjhy-isv.isvjcloud.com',
+            Host: 'lzkj-isv.isvjcloud.com',
             Accept: 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
             'Accept-Language': 'zh-cn',
             'Accept-Encoding': 'gzip, deflate, br',
             'Content-Type': 'application/x-www-form-urlencoded',
-            Origin: 'https://cjhy-isv.isvjcloud.com',
+            Origin: 'https://lzkj-isv.isvjcloud.com',
             'User-Agent': `jdapp;iPhone;9.5.4;13.6;${$.UUID};network/wifi;ADID/${$.ADID};model/iPhone10,3;addressid/0;appBuild/167668;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`,
             Connection: 'keep-alive',
             Referer: $.activityUrl,

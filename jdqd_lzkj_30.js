@@ -1,22 +1,15 @@
 /*
-0 0 * * * rush_sevenDay.js
+0 0 * * * rush_sign.js
 */
-const $ = new Env('超级无线店铺签到');
+const $ = new Env('31天店铺签到');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
-let activityIdList = [
-//0希捷11.6-1111豆
-"3ee89d0a230e434983c46dcb2fd780bd",
-//1蓓甜诗京自，7天37豆
-"19b782792e17499e847d2d1c8c37fdf6",
-//2宠幸京自，7天20豆
-"a82f2545a4e549768d700107d70b4f19"
-]
+let activityIdList = []
 let lz_cookie = {}
 
-if (process.env.RUSH_SEVENDAY_LIST && process.env.RUSH_SEVENDAY_LIST != "") {
-    activityIdList = process.env.RUSH_SEVENDAY_LIST.split(',');
+if (process.env.RUSH_SHOP_SIGN_LIST && process.env.RUSH_SHOP_SIGN_LIST != "") {
+    activityIdList = process.env.RUSH_SHOP_SIGN_LIST.split(',');
 }
 
 if ($.isNode()) {
@@ -59,11 +52,11 @@ if ($.isNode()) {
             $.bean = 0;
             $.ADID = getUUID('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 1);
             $.UUID = getUUID('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
-            $.activityUrl = `https://cjhy-isv.isvjcloud.com/sign/sevenDay/signActivity?activityId=${$.activityId}&shareuserid4minipg=&shopid=${$.venderId}&lng=00.000000&lat=00.000000&sid=&un_area=`
+            $.activityUrl = `https://lzkj-isv.isvjcloud.com/sign/signActivity2?activityId=${$.activityId}&venderId=${$.venderId}&adsource=tg_xuanFuTuBiao&lng=00.000000&lat=00.000000&sid=&un_area=`
             for(let a in activityIdList){
                 $.activityId = activityIdList[a];
                 console.log('\n开始第'+ a +'个活动');
-                await pandaSevenDay();
+                await addCart();
                 await $.wait(2500);
             }
             if ($.bean > 0) {
@@ -87,7 +80,8 @@ if ($.isNode()) {
     })
 
 
-async function pandaSevenDay() {
+async function addCart() {
+    await $.wait(500)
     $.token = null;
     $.secretPin = null;
     $.venderId = null;
@@ -100,7 +94,7 @@ async function pandaSevenDay() {
             await task('common/accessLogWithAD', `venderId=${$.venderId}&code=${$.activityType}&pin=${encodeURIComponent($.secretPin)}&activityId=${$.activityId}&pageUrl=${$.activityUrl}&subType=app&adSource=tg_xuanFuTuBiao`, 1);
             console.log(`签到 -> ${$.activityId}`)
             await $.wait(1000);
-            await task('sign/sevenDay/wx/signUp',`actId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}`,1);
+            await task('sign/wx/signUp',`actId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}`,1);
         } else {
             $.log("没有成功获取到用户信息")
         }
@@ -141,10 +135,10 @@ function task(function_id, body, isCommon = 0) {
                                     $.activityContent = data.act;
                                     $.activityUrl = data.act.actUrl;
                                     break;
-                                case 'sign/sevenDay/wx/signUp':
+                                case 'sign/wx/signUp':
                                     if(data){
                                         if (data.isOk) {
-                                            console.log("签到成功");
+                                            console.log('签到成功');
                                         } else {
                                             console.log(data.msg);
                                         }
@@ -167,15 +161,15 @@ function task(function_id, body, isCommon = 0) {
 }
 function taskUrl(function_id, body, isCommon) {
     return {
-        url: isCommon ? `https://cjhy-isv.isvjcloud.com/${function_id}` : `https://cjhy-isv.isvjcloud.com/sign/wx/${function_id}`,
+        url: isCommon ? `https://lzkj-isv.isvjcloud.com/${function_id}` : `https://lzkj-isv.isvjcloud.com/sign/wx/${function_id}`,
         headers: {
-            Host: 'cjhy-isv.isvjcloud.com',
+            Host: 'lzkj-isv.isvjcloud.com',
             Accept: 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
             'Accept-Language': 'zh-cn',
             'Accept-Encoding': 'gzip, deflate, br',
             'Content-Type': 'application/x-www-form-urlencoded',
-            Origin: 'https://cjhy-isv.isvjcloud.comm',
+            Origin: 'https://lzkj-isv.isvjcloud.comm',
             'User-Agent': `jdapp;iPhone;9.5.4;13.6;${$.UUID};network/wifi;ADID/${$.ADID};model/iPhone10,3;addressid/0;appBuild/167668;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`,
             Connection: 'keep-alive',
             Referer: $.activityUrl,
@@ -188,15 +182,15 @@ function taskUrl(function_id, body, isCommon) {
 
 function getMyPing() {
     let opt = {
-        url: `https://cjhy-isv.isvjcloud.com/customer/getMyPing`,
+        url: `https://lzkj-isv.isvjcloud.com/customer/getMyPing`,
         headers: {
-            Host: 'cjhy-isv.isvjcloud.com',
+            Host: 'lzkj-isv.isvjcloud.com',
             Accept: 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
             'Accept-Language': 'zh-cn',
             'Accept-Encoding': 'gzip, deflate, br',
             'Content-Type': 'application/x-www-form-urlencoded',
-            Origin: 'https://cjhy-isv.isvjcloud.com',
+            Origin: 'https://lzkj-isv.isvjcloud.com',
             'User-Agent': `jdapp;iPhone;9.5.4;13.6;${$.UUID};network/wifi;ADID/${$.ADID};model/iPhone10,3;addressid/0;appBuild/167668;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`,
             Connection: 'keep-alive',
             Referer: $.activityUrl,
