@@ -8,6 +8,8 @@ let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
 //威戈京自，11.4-100，11.5-150，11.6-200
 "cf07d2b1201946209aca819f62b5fe0b",
+//先锋7天20豆
+"e964068bdeec47c38b304dc47b4f159f",
 ]
 let lz_cookie = {}
 
