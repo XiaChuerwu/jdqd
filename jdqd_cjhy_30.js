@@ -1,7 +1,7 @@
 /*
-0 0 * * * rush_sign.js
+30 0 0,3,22 * * * jdqd_cjhy_30.js
 */
-const $ = new Env('31天店铺签到');
+const $ = new Env('31天cjhy签到');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
