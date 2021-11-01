@@ -30,6 +30,8 @@ let activityIdList = [
 "edc9ed7256ad49caa04ccea297e7e1b9",
 //11威戈京自，11.4-100，11.5-150，11.6-200
 "cf07d2b1201946209aca819f62b5fe0b",
+//12pico，7天20豆11.7/11.14/11.21/11.28
+"4ddc6b656aab40a48f118e498e2b00bf",
 ]
 let lz_cookie = {}
 
