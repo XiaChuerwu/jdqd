@@ -6,10 +6,30 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
-//威戈京自，11.4-100，11.5-150，11.6-200
-"cf07d2b1201946209aca819f62b5fe0b",
-//先锋7天20豆
+//0德亚牛奶11.5-50,11.7-100
+"5dd294cfcc19412f8853939d94b73260",
+//1先锋两季7天50豆
 "e964068bdeec47c38b304dc47b4f159f",
+//2三星家电11.7-200豆
+"44c26bc057834a23be628910557abbb6",
+//3梅林7天68豆
+"279e6b50e17d485f9453969242ad01eb",
+//4科沃斯7天111豆
+"5f8eab4bb9de4595800a70136bc514ee",
+//5轩邑7天100豆
+"4d9dbddfe10c486da90bdeea6cc9568e",
+//6雅塑7天20豆
+"8e82e2d9dac3486585fdc5db5f089bce",
+//7周黑鸭7天20豆
+"88b0e2987d0b46838a18b7d2cfb85af2",
+//8多爱个护11.6-66豆，11.7-实物
+"bb426ca0b9bc47fc8173c5adafc07476",
+//9奈力士11.4-5e
+"496cc1937c5e48c6a130a895e5c218a4",
+//10韩束京自，11.5开始，11.11-100e卡
+"edc9ed7256ad49caa04ccea297e7e1b9",
+//11威戈京自，11.4-100，11.5-150，11.6-200
+"cf07d2b1201946209aca819f62b5fe0b",
 ]
 let lz_cookie = {}
 
