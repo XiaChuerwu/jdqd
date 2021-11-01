@@ -8,7 +8,7 @@ let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
 //0远梦11.2-50豆
 "fd98c0d7b3f0451691ae30961e7a874b",
-//1林清轩25天100e
+//1林清轩25天100e 11.13
 "0d5b84f97a34431fb87cbbd59f57881f",
 //2疯狂小狗15天20豆/30天5e
 "0d96647efc03465f8657f32987d1d802",
@@ -89,7 +89,12 @@ let activityIdList = [
 //40tops，4天200豆
 "ea4384b3b1994ff9a143bb48d8b5b383",
 //41朗科，10.25-10豆，10.30-5e，11.5-1000豆，11.11-plus会员
-"2b8ed07274414beab6cb735e1cd5aedf",    
+"2b8ed07274414beab6cb735e1cd5aedf",
+//42阿宽，10豆11.15
+"7d4364ab89774fabbd5d89d111ca3077",
+"2b8ed07274414beab6cb735e1cd5aedf",
+//43迪巧，100豆11.11
+"56c2dd24d4cc4593abc40d5c2df1e82d",    
 ]
 let lz_cookie = {}
 
