@@ -32,6 +32,10 @@ let activityIdList = [
 "cf07d2b1201946209aca819f62b5fe0b",
 //12pico，7天20豆11.7/11.14/11.21/11.28
 "4ddc6b656aab40a48f118e498e2b00bf",
+///13极米，7天每天豆
+"50a988837dd84cfeaf267e0c794d20f8",
+//14格之格，7天每天豆
+"3a0c39db559842ce9e7facf86a465b9b",
 ]
 let lz_cookie = {}
 
