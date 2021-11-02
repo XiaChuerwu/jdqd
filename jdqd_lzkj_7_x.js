@@ -6,7 +6,10 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
-
+///13极米，7天每天豆
+"50a988837dd84cfeaf267e0c794d20f8",
+//14格之格，7天每天豆
+"3a0c39db559842ce9e7facf86a465b9b",
 ]
 let lz_cookie = {}
 
