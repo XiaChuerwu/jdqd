@@ -6,7 +6,8 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
- 
+//44衡水老白干，30豆11.16，50豆11.29
+"2c0351661cdf436ca63ed918a903b480", 
 ]
 let lz_cookie = {}
 
