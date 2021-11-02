@@ -94,7 +94,9 @@ let activityIdList = [
 "7d4364ab89774fabbd5d89d111ca3077",
 "2b8ed07274414beab6cb735e1cd5aedf",
 //43迪巧，100豆11.11
-"56c2dd24d4cc4593abc40d5c2df1e82d",    
+"56c2dd24d4cc4593abc40d5c2df1e82d",
+//44衡水老白干，30豆11.16，50豆11.29
+"2c0351661cdf436ca63ed918a903b480",    
 ]
 let lz_cookie = {}
 
