@@ -6,13 +6,9 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
-//17逻辑狗官方，1E卡11.6，5豆11.8，1E卡11.9
-"943f1e00c43341e7b4edb69560a423d5",
-//18松下影像京自，7天共计100
-"de21b94e8fd24abe896515fe55a01308",
-//19 thunasne旗舰店，11.10-实物
-"c6a0f643e2c34ceda0ba3636549f0679",
-//20 馋员外京自，11.10-50豆
+//21韩束京自，50豆11.6，100豆11.8，100e卡11.10，实物11.11
+"edc9ed7256ad49caa04ccea297e7e1b9",
+//22馋员外京自，50豆11.10,11.17
 "f3207d49ac8e4fcfbd542befc1338916",
 ]
 let lz_cookie = {}
