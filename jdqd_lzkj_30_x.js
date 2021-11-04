@@ -8,6 +8,14 @@ let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
 //45金泰克，10豆11.8、11.15、11.22、11.29
 "72917968974341a68305b297c9002dfd",
+//46MonsterGuardians官方旗舰店，11.6-30豆，11.8/10/12实物
+"908b5ed388ea40968b5e4e1e5ffb7241",
+//47龙润润滑油京自，每天5豆7天100
+"fc13ebe0a2ad4c9991faba8d3ff06989",
+//48薇诺娜官旗，每天2豆，567天实物
+"7e9a5290db1743b68f569140ecdb72f1",
+//49云米智能京自，11.6，11.8，试试有没有豆
+"39839dcd2e0843be8cdc075b42da4811",
 ]
 let lz_cookie = {}
 
