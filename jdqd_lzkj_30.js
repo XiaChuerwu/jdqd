@@ -107,6 +107,8 @@ let activityIdList = [
 "7e9a5290db1743b68f569140ecdb72f1",
 //49云米智能京自，11.6，11.8，试试有没有豆
 "39839dcd2e0843be8cdc075b42da4811",
+//50monsterg，30豆11.8，实物11.10,11.12,11.15
+"aecb5f09e3974689a3475ef0fa4eec5a",
 ]
 let lz_cookie = {}
 
