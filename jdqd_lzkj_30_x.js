@@ -6,8 +6,8 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
-//50monsterg，30豆11.8，实物11.10,11.12,11.15
-"aecb5f09e3974689a3475ef0fa4eec5a",
+//51歌德旗舰，豆积分
+"6a3161b3990a4a94b02187c13d94df32",
 ]
 let lz_cookie = {}
 
