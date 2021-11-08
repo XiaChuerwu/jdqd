@@ -8,6 +8,8 @@ let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
 //52苍昊，10豆11.15，50豆11.28，实物12.6
 "6a3161b3990a4a94b02187c13d94df32",
+//53新希望，每天5豆，50豆11.17，11.27
+"b04ed7032ec14fdba93a571b6eba2e50",
 ]
 let lz_cookie = {}
 
